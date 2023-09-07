@@ -12,11 +12,15 @@ axios
 
 function printTheChart(stockData) {
   const dailyData = stockData['Time Series (Daily)'];
+  console.log(dailyData)
 
   const stockDates = Object.keys(dailyData);
+  console.log(stockDates)
   const stockPrices = stockDates.map(date => dailyData[date]['4. close']);
+  console.log(stockPrices)
 
   const ctx = document.getElementById('my-chart').getContext('2d');
+//   console.log(ctx)//
   const chart = new Chart(ctx, {
     type: 'line',
     data: {
